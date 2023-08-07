@@ -1,0 +1,9 @@
+{
+    "preset": "laravel",
+    "rules": {
+        "single_line_comment_spacing": true,
+        "concat_space": {
+            "spacing": "one"
+        }
+    }
+}
