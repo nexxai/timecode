@@ -40,8 +40,21 @@
             <div class="mt-1 text-red-500 text-sm">{{ $message }}</div>
             @enderror
         </div>
+
+        <div class="mt-6 flex justify-between items-center">
+            <label for="show_in_menubar" class="block text-sm font-medium leading-6 text-gray-100">
+                Show time in menu bar?
+            </label>
+            <input type="checkbox" wire:model="show_in_menubar"
+                   class="text-red-500 rounded focus:ring-2 focus:ring-offset-2 focus:outline-red-600 focus:ring-red-600 ">
+            @error('show_in_menubar')
+            <div class="mt-1 text-red-500 text-sm">{{ $message }}</div>
+            @enderror
+        </div>
+
         <button type="submit"
-                class="mt-8 rounded-lg bg-red-600 px-4 py-3 font-bold text-white shadow hover:bg-red-500 w-full focus:outline-red-600">
+                class="mt-8 rounded-lg bg-red-600 px-4 py-3 font-bold text-white shadow hover:bg-red-500 w-full
+            focus:outline-red-600">
             Save changes
         </button>
     </form>

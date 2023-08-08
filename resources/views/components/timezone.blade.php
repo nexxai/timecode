@@ -1,19 +1,22 @@
-<div class="group relative">
+<div class="group relative" data-id="{{$tz->id}}">
     <div
-            class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500 w-full">
-        <div class="justify-between flex w-full items-end">
+            class="relative scale-100 p-6 sm:w-auto bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
+        <div class="justify-between xs:flex w-full items-end md:block md:w-96">
             <h2 class="text-md text-gray-900 dark:text-gray-100 font-extralight">
                 {{ $tz->name }}
             </h2>
-            <div class="text-3xl font-semibold text-gray-900 dark:text-gray-100">
+            <div class="text-3xl font-semibold text-gray-900 dark:text-gray-100 text-right xs:text-left md:text-right">
+                <span class="mr-1 font-light text-gray-600 dark:text-gray-400 text-sm">
+                    {{ $tz->getTimeDifference() }}
+                </span>
                 {{ $tz->getCurrentTime() }}
             </div>
         </div>
 
         {{-- Hover buttons --}}
-        <div class="inset-0 hidden font-semibold group-hover:transition-all absolute scale-100 p-4 bg-white dark:bg-gray-800/90 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none group-hover:flex group-hover:justify-between motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
+        <div class="inset-0 hidden font-semibold items-center group-hover:transition-all absolute scale-100 p-4 bg-white dark:bg-gray-800/90 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none group-hover:flex group-hover:justify-between motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
             <a href="{{route('edit', ['trackedTZ' => $tz])}}" type="button"
-               class="flex justify-between scale-100 p-4 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500 dark:text-gray-100">
+               class="ml-6 cursor-pointer flex justify-between scale-100 p-4 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500 dark:text-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                      stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -21,8 +24,8 @@
                 </svg>
                 <span class="ml-4">Edit</span>
             </a>
-            <a wire:click=" deleteMember({{$tz}})" type="button"
-               class="flex justify-between scale-100 p-4 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500 dark:text-gray-100">
+            <button wire:click="confirmDelete({{$tz}})"
+                    class="cursor-pointer flex justify-between scale-100 p-4 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500 dark:text-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                      stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -30,7 +33,15 @@
                 </svg>
 
                 <span class="ml-4">Delete</span>
-            </a>
+            </button>
         </div>
+
+        <button class="absolute top-0 left-0 text-gray-500 ml-1 py-3 hidden group-hover:block cursor-grab handle">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                 stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z"/>
+            </svg>
+        </button>
     </div>
 </div>

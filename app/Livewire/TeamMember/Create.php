@@ -10,11 +10,14 @@ use Livewire\Component;
 
 class Create extends Component
 {
-    #[Rule(['required', 'string', 'min:3'])]
+    #[Rule(['required', 'string', 'min:2'])]
     public string $name;
 
     #[Rule(['required', 'string', 'min:3'])]
     public string $timezone;
+
+    #[Rule(['required', 'bool'])]
+    public bool $show_in_menubar = false;
 
     public function createMember(): void
     {
