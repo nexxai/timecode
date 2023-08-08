@@ -7,8 +7,14 @@ export default {
         "./resources/**/*.html"
     ],
     theme: {
-        extend: {},
+        extend: {
+            screens: {
+                'xs': '400px'
+            }
+        },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/forms'),
+    ],
 }
 
