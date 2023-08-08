@@ -2,9 +2,8 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Artisan;
 use Native\Laravel\Facades\MenuBar;
-use Native\Laravel\Facades\Window;
-use Native\Laravel\Menu\Menu;
 
 class NativeAppServiceProvider
 {
@@ -15,24 +14,15 @@ class NativeAppServiceProvider
     public function boot(): void
     {
         MenuBar::create()
-            ->width(400)
-            ->height(600);
+            ->height(800)
+            ->width(600)
+            ->minHeight(800)
+            ->minWidth(600)
+            ->maxHeight(800)
+            ->maxWidth(600)
+            ->icon(base_path('resources/icons/MenuBarIconTemplate.png'));
 
-        Menu::new()
-            ->appMenu()
-            ->submenu('About2', Menu::new()
-                ->link('https://nativephp.com', 'NativePHP')
-            )
-            ->submenu('View', Menu::new()
-                ->toggleFullscreen()
-                ->separator()
-                ->toggleDevTools()
-            )
-            ->register();
-
-        Window::open()
-            ->width(800)
-            ->height(800);
+        Artisan::call('app:update-time');
 
         /**
          * GlobalShortcut::new()
