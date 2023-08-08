@@ -53,7 +53,7 @@ return [
          * The updater provider to use.
          * Supported: "s3", "spaces"
          */
-        'default' => env('NATIVEPHP_UPDATER_PROVIDER', 'spaces'),
+        'default' => env('NATIVEPHP_UPDATER_PROVIDER', 's3'),
 
         'providers' => [
             's3' => [
