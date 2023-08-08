@@ -2,7 +2,6 @@
 
 namespace App\Livewire\TeamMember;
 
-use App\Models\TeamMember;
 use App\Models\TrackedTZ;
 use Livewire\Attributes\On;
 use Livewire\Component;
@@ -45,7 +44,7 @@ class Index extends Component
 
     public function render()
     {
-        $team = TrackedTZ::all()->sortBy('display_order');
+        $team = TrackedTZ::getOrdered();
 
         return view('livewire.team-member.index', compact('team'));
     }

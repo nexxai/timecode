@@ -27,7 +27,7 @@ class UpdateTime extends Command
      */
     public function handle()
     {
-        $inMenuBar = TrackedTZ::where('show_in_menubar', true)->get();
+        $inMenuBar = TrackedTZ::displayOrder()->inMenubar()->get();
 
         if ($inMenuBar->count() > 0) {
 

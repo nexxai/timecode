@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Carbon\CarbonTimeZone;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
@@ -26,6 +27,11 @@ class TrackedTZ extends Model
     }
 
     protected $fillable = ['name', 'timezone', 'show_in_menubar'];
+
+    public static function getOrdered()
+    {
+        return TrackedTZ::displayOrder()->get();
+    }
 
     public function getCurrentTime()
     {
@@ -70,5 +76,15 @@ class TrackedTZ extends Model
         $serverTimeZone = substr($serverTimeZone, strpos($serverTimeZone, '/zoneinfo/') + 10);
 
         return $serverTimeZone;
+    }
+
+    public function scopeDisplayOrder(Builder $query): void
+    {
+        $query->orderBy('display_order');
+    }
+
+    public function scopeInMenubar(Builder $query): void
+    {
+        $query->where('show_in_menubar', true);
     }
 }
