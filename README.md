@@ -1,66 +1,51 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# TimeCode
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+TimeCode is a wonderfully simple macOS app built with [Laravel](https://www.laravel.com)
+and [NativePHP](https://www.nativephp.com) that lets you monitor the time in other timezones on your Menu Bar.
 
-## About Laravel
+## The why
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Do you have a teammate who works remotely and want to respect their private time? Add them to TimeCode so you don't
+annoy them outside of their normal working hours.
+Are you taking an online course but the instructors only provide lecture times in their local time? Add them to TimeCode
+and
+never miss another presentation on giraffes.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## The how
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+TimeCode is fully customizable. Maybe you want to track more friends in different timezones but don't need it
+constantly showing in the menu bar (screen real estate isn't free!)  Each timezone can be individually configured to
+show (or not) in your menu bar for whatever setup suits you best. Add as many or as few different zones as you want -
+you're in control!
 
-## Learning Laravel
+## Screenshots
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Menu Bar
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+![Main Screen](storage/readme/menubar.png)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Main screen
 
-## Laravel Sponsors
+![Main Screen](storage/readme/main-screen.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Edit screen
 
-### Premium Partners
+![Main Screen](storage/readme/edit-screen.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Contributions
 
-## Contributing
+Contributions are very welcome, whether in the form of PR, failing test, or just a suggestion on this repo.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Credits / Inspiration
 
-## Code of Conduct
+My original idea came from a similar app I used to use called
+[Menu World Time](https://apps.apple.com/ca/app/menu-world-time/id1446377255?mt=12) and wanting to try out
+NativePHP. TimeCode felt like a perfect way to dip my toe in the NativePHP water.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Shortly after the idea came to me, I saw a [tweet](https://twitter.com/christophrumpel/status/1688615450920284166?s=20)
+from Christoph Rumpel who mentioned he was working on the same idea (validation, yay!)
 
-## Security Vulnerabilities
+Finally, I had seen a post on [laravel-news.com](https://laravel-news.com/nativephp-tutorial) going deeper and
+simplifying some of the things I was trying to do.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This app is kind of an amalgamation of all of those sources, along with some of my own work added on.
