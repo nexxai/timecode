@@ -18,7 +18,7 @@ constantly showing in the menu bar (screen real estate isn't free!)  Each timezo
 show (or not) in your menu bar for whatever setup suits you best. Add as many or as few different zones as you want -
 you're in control!
 
-## Screenshots
+## The what
 
 ### Menu Bar
 
@@ -32,11 +32,11 @@ you're in control!
 
 ![Main Screen](storage/readme/edit-screen.png)
 
-## Contributions
+## The who
 
 Contributions are very welcome, whether in the form of PR, failing test, or just a suggestion on this repo.
 
-## Credits / Inspiration
+## The where
 
 My original idea came from a similar app I used to use called
 [Menu World Time](https://apps.apple.com/ca/app/menu-world-time/id1446377255?mt=12) and wanting to try out
