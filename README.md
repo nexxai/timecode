@@ -1,4 +1,6 @@
-# TimeCode
+<p align="center">
+    <img src="storage/readme/logo.png">
+</p>
 
 TimeCode is a wonderfully simple macOS app built with [Laravel](https://www.laravel.com)
 and [NativePHP](https://www.nativephp.com) that lets you monitor the time in other timezones on your Menu Bar.
@@ -6,10 +8,9 @@ and [NativePHP](https://www.nativephp.com) that lets you monitor the time in oth
 ## The why
 
 Do you have a teammate who works remotely and want to respect their private time? Add them to TimeCode so you don't
-annoy them outside of their normal working hours.
-Are you taking an online course but the instructors only provide lecture times in their local time? Add them to TimeCode
-and
-never miss another presentation on giraffes.
+annoy them outside their normal working hours. Are you taking an online course but the instructors only provide
+lecture times in their local time? Add them to TimeCode and never miss another presentation on giraffes (giraffe
+presentations not included).
 
 ## The how
 

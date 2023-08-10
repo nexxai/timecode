@@ -39,6 +39,20 @@ return [
     'provider' => \App\Providers\NativeAppServiceProvider::class,
 
     /**
+     * A list of environment keys that should be removed from the
+     * .env file when the application is bundled for production.
+     */
+    'cleanup_env_keys' => [
+        'AWS_*',
+        'DO_SPACES_*',
+        '*_SECRET',
+        'NATIVEPHP_UPDATER_PATH',
+        'NATIVEPHP_APPLE_ID',
+        'NATIVEPHP_APPLE_ID_PASS',
+        'NATIVEPHP_APPLE_TEAM_ID',
+    ],
+
+    /**
      * The NativePHP updater configuration.
      */
     'updater' => [
